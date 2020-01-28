@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Hullabalook Technical Challenge</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+
+      <div class="controls">
+        <button class="start" v-if="!isActive" @click="start">Start</button>
+        <button class="stop" v-if="isActive" @click="stop">Stop</button>
+        <div class="counter" v-if="isActive">{{ seconds }}</div>
+      </div>
+
+      <div class="game">
+        <tile name="A" @tile-clicked="handleTileClick"></tile>
+        <tile name="B" @tile-clicked="handleTileClick"></tile>
+        <tile name="C" @tile-clicked="handleTileClick"></tile>
+        <tile name="D" @tile-clicked="handleTileClick"></tile>
+      </div>
+
+      <div class="feedback">
+        <span>{{ tilesClicked }}</span>
+      </div>
+    </div>
+
+
+    <script src="js/tile.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

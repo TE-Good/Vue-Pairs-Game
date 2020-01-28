@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New'
+}
+
+#app {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 24px;
+}
+
+#app > * {
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  display: block;
+  border-radius: 25px;
+  padding: 9px 16px;
+  font-size: 80px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+button.start {
+  background: green;
+}
+
+button.stop {
+  background: red;
+}
+
+.game {
+  width: 80%;
+  height: 400px;
+  background: grey;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center
+}
+
+.game > div {
+  width: 45%;
+  height: 45%;
+  background: #3492fb;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#instructions h1 {
+  text-align: center;
+}
+
+#instructions {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#instructions .image {
+  width: 100%
+}
+
+#instructions .image > img {
+  width: 100%;
+}
