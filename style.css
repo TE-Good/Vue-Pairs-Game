@@ -1,58 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: 'Courier New'
+  /* font-family: 'Courier New' */
+  font-family: 'Roboto', sans-serif;
 }
 
-#app {
-  margin: 0 auto;
-  width: 100%;
-  font-size: 24px;
-}
+/*            */
+/* START PAGE */
+/*            */
+.start {
+  height: 100vh;
+  width: 100vw;
 
-#app > * {
-  margin: 0 auto;
-  text-align: center;
-}
-
-button {
-  display: block;
-  border-radius: 25px;
-  padding: 9px 16px;
-  font-size: 80px;
-  cursor: pointer;
-  margin: 0 auto;
-  margin-bottom: 50px;
-}
-
-button.start {
-  background: green;
-}
-
-button.stop {
-  background: red;
-}
-
-.game {
-  width: 80%;
-  height: 400px;
-  background: grey;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.game > div {
-  width: 45%;
-  height: 45%;
-  background: #3492fb;
-  border-radius: 25px;
+.start-button {
+  height: 8vh;
+  width: 20vw;
+  margin-top: 5vh;
+  border: 2px #555 solid;
+  border-radius: 20px;
+  
+  display: flex;
+  justify-content: center;
+  align-content: center;
   cursor: pointer;
 }
+
+.start-button:hover {
+  background: #555;
+  color: white;
+  border: 2px black solid;
+}
+
+/*           */
+/* GAME PAGE */
+/*           */
+.game-container {
+  height: 100vh;
+  width: 100vw;
+}
+.game-title {
+  height: 20vh;
+  width: 100%;
+  position: absolute;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.game-title > h2 {
+  font-size: 300%;
+  letter-spacing: 0.5vw;
+  position: relative;
+  left: -1vw;
+  z-index: 1;
+}
+.game-title > h2 > span {
+  z-index: 1;
+  color: white;
+}
+
+.game-title > h4 {
+  color: white;
+  align-self: flex-end;
+  position: relative;
+  left: 20vw;
+}
+
+/* PLAYING SECTION */
+.game {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+.side-wrapper {
+  height: 100%;
+  width: 50%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.side-wrapper:last-child {
+  background-color: #555;
+}
+
+.side {
+  height: 80%;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.side > div {
+  background: rgba(128, 128, 128, 0.1);
+  border-radius: 5px;
+  height: 30%;
+  width: 35%;
+  cursor: pointer;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh;
+}
+
+.product-icon {
+  border: 1px #555 solid;
+  
+}
+.right-brands {
+  border: 1px solid white;
+}
+
+.left-products > img {
+  height: 90%;
+    width: auto;
+}
+
+.right-brands > img {
+  height: auto;
+  width: 90%;
+}
+.side > div:hover {
+  border: 3px #4DA861 solid;
+}
+
+
+img {
+  pointer-events: none;
+}
+
+.highlighted {
+  border: #4DA861 3px solid;
+}
+
+.wrong {
+  border: #C11F21 3px solid;
+  background-color: #C11F21;
+}
+
+/*            */
+/*  END PAGE  */
+/*            */
+.end {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 #instructions h1 {
   text-align: center;
