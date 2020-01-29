@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Hullabalook Technical Challenge</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  </head>
 
-  <body>
-    <div id="app">
-      <div v-show="gameScreen === 0" class="start animated fadeInDown">
-        <h1>MATCH THE BRAND!</h1>
-        <h2>Learn how well you know the brands of your shoes</h2>
-        <div class="start-button" @click="changeToGameScreen"><h3>CLICK HERE TO START!</h3></div>
-      </div>
-      <div v-show="gameScreen === 1" class="game-container animated fadeIn slow">
-        <div class="game-title animated fadeIn">
-          <h2>MATCH TH<span>E BRAND!</span></h2>
-        </div>
-        <div class="game">
-          <div class="side-wrapper animated fadeInLeft">
-            <div class="side">
-              <div v-for="(product, index) in products.sort(randomise)" @click="productSelect(product, $event)" :product="{ product }" class="product-icon left-products animated" :key="index" >
-                <img :src="product.image" alt="" srcset="">
-              </div>
-          </div>
-          </div>
-          <div class="side-wrapper  animated fadeInRight">
-            <div class="side">
-              <div v-for="(brand, index) in brands.sort(randomise)" @click="brandSelect(brand, $event)" :product="{ brand }" class="brand-icon right-brands animated" :key="index" >
-                <img :src="brand.image" alt="">
-              </div>
-            </div>
-          </div>
-          </div>
-      </div>
-      <div v-show="gameScreen===2" class="end animated fadeInLeft">
-        <h1>CONGRATULATIONS!</h1>
-        <h2>Thanks for playing.</h2>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Hullabalook Technical Challenge</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- START PAGE -->
+    <div v-show="gameScreen === 0" class="start animated fadeInDown">
+      <h1>MATCH THE BRAND!</h1>
+      <h2>Learn how well you know the brands of your shoes</h2>
+      <div class="start-button" @click="changeToGameScreen">
+        <h3>CLICK HERE TO START!</h3>
       </div>
     </div>
+    <!-- GAME PAGE -->
+    <div v-show="gameScreen === 1" class="game-container animated fadeIn slow">
+      <div class="game-title animated fadeIn">
+        <h2>MATCH TH<span>E BRAND!</span></h2>
+      </div>
+      <div class="game">
+        <div class="side-wrapper animated fadeInLeft">
+          <div class="side">
+            <div v-for="product in products.sort(randomise)" @click="productSelect(product, $event)"
+              :product="{ product }" class="product-icon left-products animated" :key="index">
+              <img :src="product.image" alt="" srcset="">
+            </div>
+          </div>
+        </div>
+        <div class="side-wrapper  animated fadeInRight">
+          <div class="side">
+            <div v-for="(brand, index) in brands.sort(randomise)" @click="brandSelect(brand, $event)"
+              :product="{ brand }" class="brand-icon right-brands animated" :key="index">
+              <img :src="brand.image" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SCREEN -->
+    <div v-show="gameScreen===2" class="end animated fadeInLeft">
+      <h1>CONGRATULATIONS!</h1>
+      <h2>Thanks for playing.</h2>
+    </div>
+  </div>
 
 
-    <script src="js/tile.js"></script>
-    <script src="js/app.js"></script>
-  </body>
+  <script src="js/tile.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
 </html>
